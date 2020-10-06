@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.bridgelabz.hotelreservation.HotelReservationTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2020-10-06T19:06:10" hostname="DESKTOP-G28VQJM" time="0.014">
+<testsuite name="com.bridgelabz.hotelreservation.HotelReservationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-10-06T19:19:37" hostname="DESKTOP-G28VQJM" time="0.014">
   <properties/>
-  <testcase name="name" classname="com.bridgelabz.hotelreservation.HotelReservationTest" time="0.013"/>
-  <testcase name="shouldReturnLakeWood_whenAllRegularWeekdays" classname="com.bridgelabz.hotelreservation.HotelReservationTest" time="0.001"/>
+  <testcase name="shouldReturnLakeWood_whenAllRegularWeekdays" classname="com.bridgelabz.hotelreservation.HotelReservationTest" time="0.014"/>
   <system-out><![CDATA[Welcome to Hotel Reservation System
-Hotel Name: Lakewood Total Rate: $660
 Hotel Name: Lakewood Total Rate: $220
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>

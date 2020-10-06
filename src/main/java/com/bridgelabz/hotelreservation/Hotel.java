@@ -3,13 +3,15 @@ package com.bridgelabz.hotelreservation;
 public class Hotel {
 
     private String hotelName;
-    private int regularRate;
+    private int WeekDayRate;
+    private int WeekendRate;
+
 
     /*Parameterized Constrictor*/
-
-    public Hotel(String hotelName, int regularRate) {
+    public Hotel(String hotelName, int weekDayRate, int weekendRate) {
         this.hotelName = hotelName;
-        this.regularRate = regularRate;
+        WeekDayRate = weekDayRate;
+        WeekendRate = weekendRate;
     }
 
     /*Getter And Setter Methods*/
@@ -22,11 +24,20 @@ public class Hotel {
         this.hotelName = hotelName;
     }
 
-    public int getRegularRate() {
-        return regularRate;
+
+    public int getWeekDayRate() {
+        return WeekDayRate;
     }
 
-    public void setRegularRate(int regularRate) {
-        this.regularRate = regularRate;
+    public void setWeekDayRate(int weekDayRate) {
+        WeekDayRate = weekDayRate;
+    }
+
+    public int getWeekendRate() {
+        return WeekendRate;
+    }
+
+    public void setWeekendRate(int weekendRate) {
+        WeekendRate = weekendRate;
     }
 }

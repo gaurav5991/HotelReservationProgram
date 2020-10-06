@@ -15,9 +15,9 @@ public class HotelReservation {
     }
 
     public void addHotelDetails() {
-        HotelList.add(new Hotel("Lakewood", 110));
-        HotelList.add(new Hotel("Bridgewood", 150));
-        HotelList.add(new Hotel("Ridgewood", 220));
+        HotelList.add(new Hotel("Lakewood", 110,90));
+        HotelList.add(new Hotel("Bridgewood", 150,50));
+        HotelList.add(new Hotel("Ridgewood", 220,150));
     }
 
     public String findCheapestHotel(String arrival,String checkout){
@@ -29,11 +29,11 @@ public class HotelReservation {
         addHotelDetails();
 
         for (int hotel = 0; hotel < HotelList.size(); hotel++) {
-            int newRate = HotelList.get(hotel).getRegularRate() * (Days+1);
-            HotelList.get(hotel).setRegularRate(newRate);
+            int newRate = HotelList.get(hotel).getWeekDayRate() * (Days+1);
+            HotelList.get(hotel).setWeekDayRate(newRate);
         }
-        int regularRate = HotelList.stream().min(Comparator.comparing(Hotel::getRegularRate)).get().getRegularRate();
-        String hotelName = HotelList.stream().min(Comparator.comparing(Hotel::getRegularRate)).get().getHotelName();
+        int regularRate = HotelList.stream().min(Comparator.comparing(Hotel::getWeekDayRate)).get().getWeekDayRate();
+        String hotelName = HotelList.stream().min(Comparator.comparing(Hotel::getWeekDayRate)).get().getHotelName();
 
         System.out.println("Hotel Name: "+hotelName+" Total Rate: $"+regularRate);
 
@@ -50,4 +50,5 @@ public class HotelReservation {
         }
         return date;
     }
+
 }
