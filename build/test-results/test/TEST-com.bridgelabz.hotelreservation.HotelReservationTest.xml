@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bridgelabz.hotelreservation.HotelReservationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-10-06T17:53:01" hostname="DESKTOP-G28VQJM" time="0.0">
+  <properties/>
+  <testcase name="name" classname="com.bridgelabz.hotelreservation.HotelReservationTest" time="0.0"/>
+  <system-out><![CDATA[Welcome to Hotel Reservation System
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
