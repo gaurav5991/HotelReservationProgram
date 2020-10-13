@@ -16,8 +16,8 @@ public class HotelReservation {
     }
 
     /*Function to add hotel Name and Regular Rate to HotelList*/
-    public void addHotelDetails(String hotelName, int weekDayRate, int weekendRate) {
-        Hotel hotel = new Hotel(hotelName, weekDayRate, weekendRate);
+    public void addHotelDetails(String hotelName, int weekDayRate, int weekendRate, int rating) {
+        Hotel hotel = new Hotel(hotelName, weekDayRate, weekendRate,rating);
         HotelList.add(hotel);
     }
 
@@ -37,11 +37,9 @@ public class HotelReservation {
 
                 if (day == 6 || day == 7){
                     hotelRent = hotelRent + hotel.getWeekendRate();
-                    System.out.println(hotelRent);
                 }
                 else{
                     hotelRent = hotelRent + hotel.getWeekDayRate();
-                    System.out.println(hotelRent);
                 }
                 start = start.plusDays(1);
             }
