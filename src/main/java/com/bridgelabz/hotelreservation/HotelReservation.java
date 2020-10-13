@@ -1,54 +1,69 @@
 package com.bridgelabz.hotelreservation;
 
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.*;
-import java.util.concurrent.TimeUnit;
 
 public class HotelReservation {
 
     ArrayList<Hotel> HotelList = new ArrayList<>();
 
-    public void printWelcomeMessage(){
+    /*Function to print Welcome message*/
+    public boolean printWelcomeMessage() {
         System.out.println("Welcome to Hotel Reservation System");
+        return true;
     }
 
-    public void addHotelDetails() {
-        HotelList.add(new Hotel("Lakewood", 110,90));
-        HotelList.add(new Hotel("Bridgewood", 150,50));
-        HotelList.add(new Hotel("Ridgewood", 220,150));
+    /*Function to add hotel Name and Regular Rate to HotelList*/
+    public void addHotelDetails(String hotelName, int weekDayRate, int weekendRate) {
+        Hotel hotel = new Hotel(hotelName, weekDayRate, weekendRate);
+        HotelList.add(hotel);
     }
 
-    public String findCheapestHotel(String arrival,String checkout){
-        Date StartDate = convertStringToDate(arrival);
-        Date EndDate = convertStringToDate(checkout);
-        long Duration = EndDate.getTime()-StartDate.getTime();
-        int Days = (int) TimeUnit.DAYS.convert(Duration,TimeUnit.MILLISECONDS);
+    /*Function to find Cheapest Hotel for Regular Customer for Given Date Range*/
+    public ArrayList<String> findCheapestHotelForRegularCustomer(String arrival, String checkout) {
+        LocalDate arrivalDate = convertStringToDate(arrival);
+        LocalDate checkoutDate = convertStringToDate(checkout);
+        ArrayList<String> cheapestHotelNameList = new ArrayList<>();
+        int minRate = Integer.MAX_VALUE;
+        for (Hotel hotel : HotelList) {
+            LocalDate start = arrivalDate;
+            LocalDate end = checkoutDate.plusDays(1);
+            int hotelRent = 0;
+            while (!(start.equals(end))) {
 
-        addHotelDetails();
+                int day = start.getDayOfWeek().getValue();
 
-        for (int hotel = 0; hotel < HotelList.size(); hotel++) {
-            int newRate = HotelList.get(hotel).getWeekDayRate() * (Days+1);
-            HotelList.get(hotel).setWeekDayRate(newRate);
+                if (day == 6 || day == 7){
+                    hotelRent = hotelRent + hotel.getWeekendRate();
+                    System.out.println(hotelRent);
+                }
+                else{
+                    hotelRent = hotelRent + hotel.getWeekDayRate();
+                    System.out.println(hotelRent);
+                }
+                start = start.plusDays(1);
+            }
+            if (hotelRent <= minRate) {
+                minRate = hotelRent;
+                cheapestHotelNameList.add(hotel.getHotelName());
+            }
         }
-        int regularRate = HotelList.stream().min(Comparator.comparing(Hotel::getWeekDayRate)).get().getWeekDayRate();
-        String hotelName = HotelList.stream().min(Comparator.comparing(Hotel::getWeekDayRate)).get().getHotelName();
-
-        System.out.println("Hotel Name: "+hotelName+" Total Rate: $"+regularRate);
-
-        return hotelName;
-
+        for (String hotel: cheapestHotelNameList){
+            System.out.println("Hotel Name: "+hotel+" Total Rate $"+minRate);
+        }
+        return cheapestHotelNameList;
     }
-    public Date convertStringToDate(String dateString){
-        Date date = null;
-        DateFormat df = new SimpleDateFormat("ddMMMyyyy");
-        try{
-            date = df.parse(dateString);
-        }catch (ParseException e){
+    /*Convert String into LocalDate*/
+    public LocalDate convertStringToDate(String dateString) {
+        LocalDate date = null;
+        DateTimeFormatter dateTimeFormat = DateTimeFormatter.ofPattern("ddMMMyyyy");
+        try {
+            date = LocalDate.parse(dateString, dateTimeFormat);
+        } catch (DateTimeParseException e) {
             e.printStackTrace();
         }
         return date;
     }
-
 }

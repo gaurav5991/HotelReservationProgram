@@ -1,9 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.bridgelabz.hotelreservation.HotelReservationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-10-06T19:19:37" hostname="DESKTOP-G28VQJM" time="0.014">
+<testsuite name="com.bridgelabz.hotelreservation.HotelReservationTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2020-10-13T16:26:43" hostname="DESKTOP-G28VQJM" time="0.03">
   <properties/>
-  <testcase name="shouldReturnLakeWood_whenAllRegularWeekdays" classname="com.bridgelabz.hotelreservation.HotelReservationTest" time="0.014"/>
+  <testcase name="givenThreeHotelsForGivenDateRangeHavingAllWeekDaysShouldReturnLakewood" classname="com.bridgelabz.hotelreservation.HotelReservationTest" time="0.028"/>
+  <testcase name="givenThreeHotelsForGivenDateRangeHavingBothWeekDayAndWeekendShouldReturnLakewoodAndBridgewood" classname="com.bridgelabz.hotelreservation.HotelReservationTest" time="0.001"/>
   <system-out><![CDATA[Welcome to Hotel Reservation System
-Hotel Name: Lakewood Total Rate: $220
+110
+220
+150
+300
+220
+440
+Hotel Name: Lakewood Total Rate $220
+110
+200
+150
+200
+220
+370
+Hotel Name: Lakewood Total Rate $200
+Hotel Name: Bridgewood Total Rate $200
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
