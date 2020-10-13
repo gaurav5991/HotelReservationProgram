@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.bridgelabz.hotelreservation.HotelReservationTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2020-10-13T16:36:24" hostname="DESKTOP-G28VQJM" time="0.029">
+<testsuite name="com.bridgelabz.hotelreservation.HotelReservationTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2020-10-13T17:13:53" hostname="DESKTOP-G28VQJM" time="0.034">
   <properties/>
   <testcase name="givenThreeHotelsForGivenDateRangeHavingAllWeekDaysShouldReturnLakewood" classname="com.bridgelabz.hotelreservation.HotelReservationTest" time="0.026"/>
-  <testcase name="givenThreeHotelsForGivenDateRangeHavingBothWeekDayAndWeekendShouldReturnLakewoodAndBridgewood" classname="com.bridgelabz.hotelreservation.HotelReservationTest" time="0.002"/>
+  <testcase name="givenThreeHotelsForGivenDateRangeHavingBothWeekDayAndWeekendHavingBestRatingShouldReturnBridgewood" classname="com.bridgelabz.hotelreservation.HotelReservationTest" time="0.006"/>
+  <testcase name="givenThreeHotelsForGivenDateRangeHavingAllWeekDaysHavingBestRatingShouldReturnLakewood" classname="com.bridgelabz.hotelreservation.HotelReservationTest" time="0.001"/>
+  <testcase name="givenThreeHotelsForGivenDateRangeHavingBothWeekDayAndWeekendShouldReturnLakewoodAndBridgewood" classname="com.bridgelabz.hotelreservation.HotelReservationTest" time="0.001"/>
   <system-out><![CDATA[Welcome to Hotel Reservation System
 Hotel Name: Lakewood Total Rate $220
+Hotel Name: Bridgewood, Rating: 4 and Total Rate $200
+Hotel Name: Lakewood, Rating: 3 and Total Rate $220
 Hotel Name: Lakewood Total Rate $200
 Hotel Name: Bridgewood Total Rate $200
 ]]></system-out>
