@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.bridgelabz.hotelreservation.HotelReservationTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2020-10-13T17:32:40" hostname="DESKTOP-G28VQJM" time="0.052">
+<testsuite name="com.bridgelabz.hotelreservation.HotelReservationTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2020-10-13T17:55:59" hostname="DESKTOP-G28VQJM" time="0.037">
   <properties/>
-  <testcase name="givenThreeHotelsForGivenDateRangeHavingAllWeekDaysShouldReturnLakewood" classname="com.bridgelabz.hotelreservation.HotelReservationTest" time="0.036"/>
-  <testcase name="givenThreeHotelsForGivenDateRangeHavingBothWeekDayAndWeekendHavingBestRatingShouldReturnBridgewood" classname="com.bridgelabz.hotelreservation.HotelReservationTest" time="0.008"/>
+  <testcase name="givenThreeHotelsForGivenDateRangeHavingAllWeekDaysShouldReturnLakewood" classname="com.bridgelabz.hotelreservation.HotelReservationTest" time="0.027"/>
+  <testcase name="givenThreeHotelsForGivenDateRangeHavingBothWeekDayAndWeekendHavingBestRatingShouldReturnBridgewood" classname="com.bridgelabz.hotelreservation.HotelReservationTest" time="0.007"/>
   <testcase name="givenThreeHotelsForGivenDateRangeHavingAllWeekDaysHavingBestRatingShouldReturnLakewood" classname="com.bridgelabz.hotelreservation.HotelReservationTest" time="0.001"/>
   <testcase name="givenThreeHotelsForGivenDateRangeHavingBothWeekDayAndWeekendShouldReturnLakewoodAndBridgewood" classname="com.bridgelabz.hotelreservation.HotelReservationTest" time="0.001"/>
   <testcase name="givenThreeHotelsForGivenDateRangeHavingBothWeekDayAndWeekendHavingBestRatingAndCheapestShouldReturnBridgewood" classname="com.bridgelabz.hotelreservation.HotelReservationTest" time="0.001"/>
-  <testcase name="givenThreeHotelsForGivenDateRangeHavingAllWeekDaysHavingBestRatingAndCheapestShouldReturnLakewood" classname="com.bridgelabz.hotelreservation.HotelReservationTest" time="0.001"/>
+  <testcase name="givenThreeHotelsForGivenDateRangeHavingAllWeekDaysHavingBestRatingAndCheapestShouldReturnLakewood" classname="com.bridgelabz.hotelreservation.HotelReservationTest" time="0.0"/>
   <system-out><![CDATA[Welcome to Hotel Reservation System
 Hotel Name: Lakewood Total Rate $220
 Hotel Name: Ridgewood, Rating: 5 and Total Rate $370

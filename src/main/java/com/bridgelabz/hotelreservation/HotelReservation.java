@@ -15,8 +15,8 @@ public class HotelReservation {
     }
 
     /*Function to add hotel Name and Regular Rate to HotelList*/
-    public void addHotelDetails(String hotelName, int weekDayRate, int weekendRate, int rating) {
-        Hotel hotel = new Hotel(hotelName, weekDayRate, weekendRate,rating);
+    public void addHotelDetails(String hotelName, int weekDayRate, int weekendRate, int rating,int rewardWeekDayRate, int rewardWeekendRate) {
+        Hotel hotel = new Hotel(hotelName, weekDayRate, weekendRate,rating,rewardWeekDayRate, rewardWeekendRate);
         HotelList.add(hotel);
     }
 

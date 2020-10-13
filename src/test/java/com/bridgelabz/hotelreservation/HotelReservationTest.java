@@ -18,9 +18,9 @@ public class HotelReservationTest {
     /*Initialize all Hotel Details by calling addHotelDetails() Method*/
     @Before
     public void initialize(){
-        reservation.addHotelDetails("Lakewood",110,90,3);
-        reservation.addHotelDetails("Bridgewood",150, 50,4);
-        reservation.addHotelDetails("Ridgewood",220, 150,5);
+        reservation.addHotelDetails("Lakewood",110,90,3,80,80);
+        reservation.addHotelDetails("Bridgewood",150, 50,4,110,50);
+        reservation.addHotelDetails("Ridgewood",220, 150,5,100,40);
     }
 
     /*Test Case for finding cheapest Hotel for Regular Customer if all weekdays */
