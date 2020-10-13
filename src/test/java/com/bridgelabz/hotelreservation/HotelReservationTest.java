@@ -39,14 +39,26 @@ public class HotelReservationTest {
     }
     /*Test Case for finding Best Rated cheapest Hotel for Regular Customer if all weekdays */
     @Test
-    public void givenThreeHotelsForGivenDateRangeHavingAllWeekDaysHavingBestRatingShouldReturnLakewood() {
+    public void givenThreeHotelsForGivenDateRangeHavingAllWeekDaysHavingBestRatingAndCheapestShouldReturnLakewood() {
         String hotelName = reservation.findCheapestBestRatedHotelForRegularCustomer("10Sep2020", "11Sep2020");
         Assert.assertEquals("Lakewood",hotelName);
     }
     /*Test Case for finding Best Rated cheapest Hotel for Regular Customer if both weekdays and weekend days are there */
     @Test
-    public void givenThreeHotelsForGivenDateRangeHavingBothWeekDayAndWeekendHavingBestRatingShouldReturnBridgewood() {
+    public void givenThreeHotelsForGivenDateRangeHavingBothWeekDayAndWeekendHavingBestRatingAndCheapestShouldReturnBridgewood() {
         String hotelName = reservation.findCheapestBestRatedHotelForRegularCustomer("11Sep2020", "12Sep2020");
         Assert.assertEquals("Bridgewood",hotelName);
+    }
+    /*Test Case for finding Best Rated Hotel for Regular Customer if all weekdays */
+    @Test
+    public void givenThreeHotelsForGivenDateRangeHavingAllWeekDaysHavingBestRatingShouldReturnLakewood() {
+        String hotelName = reservation.findBestRatedHotelForRegularCustomer("10Sep2020", "11Sep2020");
+        Assert.assertEquals("Ridgewood",hotelName);
+    }
+    /*Test Case for finding Best Rated Hotel for Regular Customer if both weekdays and weekend days are there */
+    @Test
+    public void givenThreeHotelsForGivenDateRangeHavingBothWeekDayAndWeekendHavingBestRatingShouldReturnBridgewood() {
+        String hotelName = reservation.findBestRatedHotelForRegularCustomer("11Sep2020", "12Sep2020");
+        Assert.assertEquals("Ridgewood",hotelName);
     }
 }

@@ -7,16 +7,19 @@ import java.util.*;
 
 public class HotelReservation {
     ArrayList<Hotel> HotelList = new ArrayList<>();
+
     /*Function to print Welcome message*/
     public boolean printWelcomeMessage() {
         System.out.println("Welcome to Hotel Reservation System");
         return true;
     }
+
     /*Function to add hotel Name and Regular Rate to HotelList*/
     public void addHotelDetails(String hotelName, int weekDayRate, int weekendRate, int rating) {
         Hotel hotel = new Hotel(hotelName, weekDayRate, weekendRate,rating);
         HotelList.add(hotel);
     }
+
     /*Function to find Cheapest Hotel for Regular Customer for Given Date Range*/
     public ArrayList<String> findCheapestHotelForRegularCustomer(String arrival, String checkout) {
         LocalDate arrivalDate = convertStringToDate(arrival);
@@ -49,6 +52,7 @@ public class HotelReservation {
         }
         return cheapestHotelNameList;
     }
+
     /*Function to find Cheapest Best Rated Hotel for Regular Customer for Given Date Range*/
     public String findCheapestBestRatedHotelForRegularCustomer(String arrival, String checkout) {
         LocalDate arrivalDate = convertStringToDate(arrival);
@@ -85,6 +89,40 @@ public class HotelReservation {
         System.out.println("Hotel Name: "+cheapestHotel.getHotelName()+", Rating: "+bestRating+" and Total Rate $"+minRate);
         return cheapestHotel.getHotelName();
     }
+
+    /*Function to find Best Rated Hotel for Regular Customer for Given Date Range*/
+    public String findBestRatedHotelForRegularCustomer(String arrival, String checkout) {
+        LocalDate arrivalDate = convertStringToDate(arrival);
+        LocalDate checkoutDate = convertStringToDate(checkout);
+        int minRate = Integer.MAX_VALUE;
+        int bestRating = 0;
+        Hotel BestRatedHotel = null;
+        for (Hotel hotel : HotelList) {
+            LocalDate start = arrivalDate;
+            LocalDate end = checkoutDate.plusDays(1);
+            int hotelRent = 0;
+            while (!(start.equals(end))) {
+
+                int day = start.getDayOfWeek().getValue();
+
+                if (day == 6 || day == 7){
+                    hotelRent = hotelRent + hotel.getWeekendRate();
+                }
+                else{
+                    hotelRent = hotelRent + hotel.getWeekDayRate();
+                }
+                start = start.plusDays(1);
+            }
+            if(hotel.getRating()>bestRating){
+                bestRating = hotel.getRating();
+                minRate = hotelRent;
+                BestRatedHotel = hotel;
+            }
+        }
+        System.out.println("Hotel Name: "+BestRatedHotel.getHotelName()+", Rating: "+bestRating+" and Total Rate $"+minRate);
+        return BestRatedHotel.getHotelName();
+    }
+
     /*Convert String into LocalDate*/
     public LocalDate convertStringToDate(String dateString) {
         LocalDate date = null;
