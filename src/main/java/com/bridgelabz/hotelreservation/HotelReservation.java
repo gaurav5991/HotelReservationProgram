@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class HotelReservation {
     ArrayList<Hotel> HotelList = new ArrayList<>();
@@ -122,42 +123,41 @@ public class HotelReservation {
         System.out.println("Hotel Name: "+BestRatedHotel.getHotelName()+", Rating: "+bestRating+" and Total Rate $"+minRate);
         return BestRatedHotel.getHotelName();
     }
+    /*Calculate total cost for particular hotel*/
+    public static long calculateRewardCost(Hotel hotel, LocalDate start, LocalDate end) {
+
+        long totalCost = 0;
+        end = end.plusDays(1);
+        while (!(start.equals(end))) {
+
+            int day = start.getDayOfWeek().getValue();
+
+            if (day == 6 || day == 7)
+                totalCost = totalCost + hotel.getRewardCustomerWeekEndRate();
+
+            else
+                totalCost = totalCost + hotel.getRewardCustomerWeekDayRate();
+
+            start = start.plusDays(1);
+
+        }
+        return totalCost;
+    }
 
     /*Function to find Best Rated Cheapest Hotel for Reward Customer for Given Date Range*/
     public String findBestRatedCheapestHotelForRewardCustomer(String arrival, String checkout) {
         LocalDate arrivalDate = convertStringToDate(arrival);
         LocalDate checkoutDate = convertStringToDate(checkout);
-        int minRate = Integer.MAX_VALUE;
+        String cheapestHotel = "";
         int bestRating = 0;
-        Hotel cheapestHotel = null;
-        for (Hotel hotel : HotelList) {
-            LocalDate start = arrivalDate;
-            LocalDate end = checkoutDate.plusDays(1);
-            int hotelRent = 0;
-            while (!(start.equals(end))) {
-
-                int day = start.getDayOfWeek().getValue();
-
-                if (day == 6 || day == 7){
-                    hotelRent = hotelRent + hotel.getRewardCustomerWeekEndRate();
-                }
-                else{
-                    hotelRent = hotelRent + hotel.getRewardCustomerWeekDayRate();
-                }
-                start = start.plusDays(1);
-            }
-            if (hotelRent < minRate) {
-                minRate = hotelRent;
-                cheapestHotel = hotel;
-                bestRating = hotel.getRating();
-            }
-            if(hotelRent==minRate && hotel.getRating()>bestRating){
-                bestRating = hotel.getRating();
-                cheapestHotel = hotel;
-            }
-        }
-        System.out.println("Hotel Name: "+cheapestHotel.getHotelName()+", Rating: "+bestRating+" and Total Rate $"+minRate);
-        return cheapestHotel.getHotelName();
+        long minRate = HotelList.stream().map(h -> calculateRewardCost(h, arrivalDate, checkoutDate)).min(Long::compare).get();
+        long finalMinRate = minRate;
+        List<Hotel> cheapestHotelsList = HotelList.stream().filter(hotel -> calculateRewardCost(hotel, arrivalDate, checkoutDate) == finalMinRate).collect(Collectors.toList());
+        Hotel bestRatedHotel = cheapestHotelsList.stream().max(Comparator.comparingInt(Hotel::getRating)).get();
+        cheapestHotel = bestRatedHotel.getHotelName();
+        bestRating = bestRatedHotel.getRating();
+        System.out.println("Hotel Name: "+cheapestHotel+", Rating: "+bestRating+" and Total Rate $"+minRate);
+        return cheapestHotel;
     }
 
     /*Convert String into LocalDate*/
