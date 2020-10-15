@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.bridgelabz.hotelreservation.HotelReservationTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2020-10-13T18:34:09" hostname="DESKTOP-G28VQJM" time="0.04">
+<testsuite name="com.bridgelabz.hotelreservation.HotelReservationTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2020-10-15T04:19:47" hostname="GAURAV" time="0.107">
   <properties/>
-  <testcase name="givenThreeHotelsForGivenDateRangeHavingBothWeekDayAndWeekendHavingBestRatingAndCheapestForRewardCustomerShouldReturnBridgewood" classname="com.bridgelabz.hotelreservation.HotelReservationTest" time="0.032"/>
-  <testcase name="givenThreeHotelsForGivenDateRangeHavingAllWeekDaysShouldReturnLakewood" classname="com.bridgelabz.hotelreservation.HotelReservationTest" time="0.004"/>
-  <testcase name="givenThreeHotelsForGivenDateRangeHavingBothWeekDayAndWeekendHavingBestRatingShouldReturnBridgewood" classname="com.bridgelabz.hotelreservation.HotelReservationTest" time="0.001"/>
-  <testcase name="givenThreeHotelsForGivenDateRangeHavingAllWeekDaysHavingBestRatingShouldReturnLakewood" classname="com.bridgelabz.hotelreservation.HotelReservationTest" time="0.0"/>
-  <testcase name="givenThreeHotelsForGivenDateRangeHavingBothWeekDayAndWeekendShouldReturnLakewoodAndBridgewood" classname="com.bridgelabz.hotelreservation.HotelReservationTest" time="0.001"/>
-  <testcase name="givenThreeHotelsForGivenDateRangeHavingAllWeekDaysHavingBestRatingAndCheapestForRewardCustomerShouldReturnLakewood" classname="com.bridgelabz.hotelreservation.HotelReservationTest" time="0.0"/>
-  <testcase name="givenThreeHotelsForGivenDateRangeHavingBothWeekDayAndWeekendHavingBestRatingAndCheapestShouldReturnBridgewood" classname="com.bridgelabz.hotelreservation.HotelReservationTest" time="0.001"/>
+  <testcase name="givenThreeHotelsForGivenDateRangeHavingAllWeekDaysShouldReturnLakewood" classname="com.bridgelabz.hotelreservation.HotelReservationTest" time="0.055"/>
+  <testcase name="givenThreeHotelsForGivenDateRangeHavingBothWeekDayAndWeekendHavingBestRatingShouldReturnBridgewood" classname="com.bridgelabz.hotelreservation.HotelReservationTest" time="0.012"/>
+  <testcase name="givenThreeHotelsForGivenDateRangeHavingAllWeekDaysHavingBestRatingShouldReturnLakewood" classname="com.bridgelabz.hotelreservation.HotelReservationTest" time="0.002"/>
+  <testcase name="givenThreeHotelsForGivenDateRangeHavingBothWeekDayAndWeekendShouldReturnLakewoodAndBridgewood" classname="com.bridgelabz.hotelreservation.HotelReservationTest" time="0.002"/>
+  <testcase name="givenThreeHotelsForGivenDateRangeHavingAllWeekDaysHavingBestRatingAndCheapestForRewardCustomerShouldReturnLakewood" classname="com.bridgelabz.hotelreservation.HotelReservationTest" time="0.026"/>
+  <testcase name="givenThreeHotelsAsForGivenDateRangeHavingBothWeekDayAndWeekendHavingBestRatingAndCheapestForRewardCustomerShouldReturnBridgewood" classname="com.bridgelabz.hotelreservation.HotelReservationTest" time="0.001"/>
+  <testcase name="givenThreeHotelsForGivenDateRangeHavingBothWeekDayAndWeekendHavingBestRatingAndCheapestShouldReturnBridgewood" classname="com.bridgelabz.hotelreservation.HotelReservationTest" time="0.004"/>
   <testcase name="givenThreeHotelsForGivenDateRangeHavingAllWeekDaysHavingBestRatingAndCheapestShouldReturnLakewood" classname="com.bridgelabz.hotelreservation.HotelReservationTest" time="0.001"/>
   <system-out><![CDATA[Welcome to Hotel Reservation System
-Hotel Name: Ridgewood, Rating: 5 and Total Rate $140
 Hotel Name: Lakewood Total Rate $220
 Hotel Name: Ridgewood, Rating: 5 and Total Rate $370
 Hotel Name: Ridgewood, Rating: 5 and Total Rate $440
 Hotel Name: Lakewood Total Rate $200
 Hotel Name: Bridgewood Total Rate $200
 Hotel Name: Lakewood, Rating: 3 and Total Rate $160
+Hotel Name: Ridgewood, Rating: 5 and Total Rate $140
 Hotel Name: Bridgewood, Rating: 4 and Total Rate $200
 Hotel Name: Lakewood, Rating: 3 and Total Rate $220
 ]]></system-out>
